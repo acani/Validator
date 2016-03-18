@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D2ABEC7F1C99C54000EB88EB /* Validator.h in Headers */ = {isa = PBXBuildFile; fileRef = D2ABEC7E1C99C54000EB88EB /* Validator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2ABEC861C99C54000EB88EB /* Validator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2ABEC7B1C99C54000EB88EB /* Validator.framework */; };
 		D2ABEC8B1C99C54000EB88EB /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABEC8A1C99C54000EB88EB /* ValidatorTests.swift */; };
 		D2ABEC961C99C64000EB88EB /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABEC951C99C64000EB88EB /* Validator.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		D2ABEC7B1C99C54000EB88EB /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2ABEC7E1C99C54000EB88EB /* Validator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
 		D2ABEC801C99C54000EB88EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2ABEC851C99C54000EB88EB /* ValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ABEC8A1C99C54000EB88EB /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		D2ABEC7D1C99C54000EB88EB /* Validator */ = {
 			isa = PBXGroup;
 			children = (
-				D2ABEC7E1C99C54000EB88EB /* Validator.h */,
 				D2ABEC951C99C64000EB88EB /* Validator.swift */,
 				D2ABEC801C99C54000EB88EB /* Info.plist */,
 			);
@@ -96,7 +93,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2ABEC7F1C99C54000EB88EB /* Validator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
