@@ -1,18 +1,18 @@
 import Foundation.NSCharacterSet
 
-public  let invalidEmailMessage     = "Email must contain an at sign (@) and be between 3 & 254 characters."
 private let invalidNameMessage      = " name must be between 1 & 50 characters."
 public  let invalidFirstNameMessage = "First" + invalidNameMessage
 public  let invalidLastNameMessage  = "Last" + invalidNameMessage
 public  let invalidUsernameMessage  = "Username must be alphanumeric and between 5 & 15 characters."
+public  let invalidEmailMessage     = "Email must contain an at sign (@) and be between 3 & 254 characters."
 
 extension String {
-    public var isAlphanumeric: Bool {
-        return rangeOfString("^[a-zA-Z0-9]+$", options: .RegularExpressionSearch) != nil
+    public func strip() -> String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
     }
 
-    public var isValidEmail: Bool {
-        return 3...254 ~= characters.count && characters.contains("@")
+    public var isAlphanumeric: Bool {
+        return rangeOfString("^[a-zA-Z0-9]+$", options: .RegularExpressionSearch) != nil
     }
 
     public var isValidName: Bool {
@@ -23,7 +23,7 @@ extension String {
         return 5...15 ~= characters.count && isAlphanumeric
     }
 
-    public func strip() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    public var isValidEmail: Bool {
+        return 3...254 ~= characters.count && characters.contains("@")
     }
 }

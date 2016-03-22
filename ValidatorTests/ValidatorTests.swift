@@ -2,10 +2,6 @@ import XCTest
 import Validator
 
 class ValidatorTests: XCTestCase {
-    func testInvalidEmailMessage() {
-        XCTAssertEqual(invalidEmailMessage, "Email must contain an at sign (@) and be between 3 & 254 characters.")
-    }
-
     func testInvalidFirstNameMessage() {
         XCTAssertEqual(invalidFirstNameMessage, "First name must be between 1 & 50 characters.")
     }
@@ -18,6 +14,18 @@ class ValidatorTests: XCTestCase {
         XCTAssertEqual(invalidUsernameMessage, "Username must be alphanumeric and between 5 & 15 characters.")
     }
 
+    func testInvalidEmailMessage() {
+        XCTAssertEqual(invalidEmailMessage, "Email must contain an at sign (@) and be between 3 & 254 characters.")
+    }
+
+    func testStrip() {
+        XCTAssertEqual("".strip(), "")                      // empty
+        XCTAssertEqual("—Cool-".strip(), "—Cool-")          // dashes
+        XCTAssertEqual("  cool  ".strip(), "cool")          // spaces
+        XCTAssertEqual("\n cool \t".strip(), "cool")        // other
+        XCTAssertEqual("cool yo".strip(), "cool yo")        // normal
+    }
+
     func testIsAlphanumeric() {
         XCTAssertFalse("".isAlphanumeric)                   // empty
         XCTAssertFalse("Hello World".isAlphanumeric)        // space
@@ -26,19 +34,6 @@ class ValidatorTests: XCTestCase {
         XCTAssertTrue("abc123".isAlphanumeric)              // normal
         XCTAssertTrue("abcdefghijklmNOPQRSTUVWXYZ01234".isAlphanumeric)
         XCTAssertTrue("ABCDEFGHIJKLMnopqrstuvwxyz56789".isAlphanumeric)
-    }
-
-    func testIsValidEmail() {
-        var longEmail  = "max@"; for _ in 1...250 { longEmail += "x" }
-        XCTAssertEqual(longEmail.characters.count, 254)
-
-        XCTAssertFalse("".isValidEmail)                     // empty
-        XCTAssertFalse("a@".isValidEmail)                   // too short
-        XCTAssertFalse((longEmail+"1").isValidEmail)        // too long
-        XCTAssertFalse("no at-sign".isValidEmail)           // no at-sign
-        XCTAssertTrue("a2@".isValidEmail)                   // shortest
-        XCTAssertTrue(longEmail.isValidEmail)               // longest
-        XCTAssertTrue("me@example.com".isValidEmail)        // normal
     }
 
     func testIsValidName() {
@@ -65,11 +60,16 @@ class ValidatorTests: XCTestCase {
         XCTAssertTrue("johnsmith".isValidUsername)          // normal
     }
 
-    func testStrip() {
-        XCTAssertEqual("".strip(), "")                      // empty
-        XCTAssertEqual("—Cool-".strip(), "—Cool-")          // dashes
-        XCTAssertEqual("  cool  ".strip(), "cool")          // spaces
-        XCTAssertEqual("\n cool \t".strip(), "cool")        // other
-        XCTAssertEqual("cool yo".strip(), "cool yo")        // normal
+    func testIsValidEmail() {
+        var longEmail  = "max@"; for _ in 1...250 { longEmail += "x" }
+        XCTAssertEqual(longEmail.characters.count, 254)
+
+        XCTAssertFalse("".isValidEmail)                     // empty
+        XCTAssertFalse("a@".isValidEmail)                   // too short
+        XCTAssertFalse((longEmail+"1").isValidEmail)        // too long
+        XCTAssertFalse("no at-sign".isValidEmail)           // no at-sign
+        XCTAssertTrue("a2@".isValidEmail)                   // shortest
+        XCTAssertTrue(longEmail.isValidEmail)               // longest
+        XCTAssertTrue("me@example.com".isValidEmail)        // normal
     }
 }
