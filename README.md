@@ -7,9 +7,9 @@ Setup: [How to add a Git repository to your Xcode project][1]
 Usage:
 
 ```swift
-let string = " \n\t abc123  ".strip()  // => "cool"
-string.isAlphanumeric                  // => false
-"abc123".isAlphanumeric                // => true
+let string = " \n\t abc123  ".strip()  // => "abc123"
+string.isAlphanumeric                  // => true
+"j_s".isAlphanumeric                   // => false
 ```
 
 ```swift
