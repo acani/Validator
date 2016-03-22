@@ -4,6 +4,7 @@ public  let invalidEmailMessage     = "Email must contain an at sign (@) and be 
 private let invalidNameMessage      = " name must be between 1 & 50 characters."
 public  let invalidFirstNameMessage = "First" + invalidNameMessage
 public  let invalidLastNameMessage  = "Last" + invalidNameMessage
+public  let invalidUsernameMessage  = "Username must be alphanumeric and between 5 & 15 characters."
 
 extension String {
     public var isAlphanumeric: Bool {

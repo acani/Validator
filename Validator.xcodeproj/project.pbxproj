@@ -23,6 +23,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D247AD231CA1077F004D64C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D2ABEC7B1C99C54000EB88EB /* Validator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ABEC801C99C54000EB88EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2ABEC851C99C54000EB88EB /* ValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +57,7 @@
 				D2ABEC7D1C99C54000EB88EB /* Validator */,
 				D2ABEC891C99C54000EB88EB /* ValidatorTests */,
 				D2ABEC7C1C99C54000EB88EB /* Products */,
+				D247AD231CA1077F004D64C7 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -379,6 +381,7 @@
 				D2ABEC911C99C54000EB88EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2ABEC921C99C54000EB88EB /* Build configuration list for PBXNativeTarget "ValidatorTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +390,7 @@
 				D2ABEC941C99C54000EB88EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

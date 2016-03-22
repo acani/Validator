@@ -14,6 +14,10 @@ class ValidatorTests: XCTestCase {
         XCTAssertEqual(invalidLastNameMessage, "Last name must be between 1 & 50 characters.")
     }
 
+    func testInvalidUsernameMessage() {
+        XCTAssertEqual(invalidUsernameMessage, "Username must be alphanumeric and between 5 & 15 characters.")
+    }
+
     func testIsAlphanumeric() {
         XCTAssertFalse("".isAlphanumeric)                   // empty
         XCTAssertFalse("Hello World".isAlphanumeric)        // space
