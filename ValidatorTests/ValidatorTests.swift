@@ -36,6 +36,14 @@ class ValidatorTests: XCTestCase {
         XCTAssertTrue("ABCDEFGHIJKLMnopqrstuvwxyz56789".isAlphanumeric)
     }
 
+    func testIsNumeric() {
+        XCTAssertFalse("".isNumeric)                        // empty
+        XCTAssertFalse("12E3".isNumeric)                    // not numeric
+        XCTAssertFalse("23²3".isNumeric)                    // superscript
+        XCTAssertTrue("002".isNumeric)                      // zero first
+        XCTAssertTrue("1234".isNumeric)                     // normal
+    }
+
     func testIsValidName() {
         let longName = "abcdefghijklmnopqrstuvwxyz 0123456789`~!@#$%^&*)_—"
         XCTAssertEqual(longName.characters.count, 50)
@@ -71,5 +79,14 @@ class ValidatorTests: XCTestCase {
         XCTAssertTrue("a2@".isValidEmail)                   // shortest
         XCTAssertTrue(longEmail.isValidEmail)               // longest
         XCTAssertTrue("me@example.com".isValidEmail)        // normal
+    }
+
+    func testIsValidCode() {
+        XCTAssertFalse("".isValidCode)                      // empty
+        XCTAssertFalse("002".isValidCode)                   // too short
+        XCTAssertFalse("12323".isValidCode)                 // too long
+        XCTAssertFalse("233²".isValidCode)                  // superscript
+        XCTAssertFalse("12E3".isValidCode)                  // not numeric
+        XCTAssertTrue("1234".isValidCode)                   // normal
     }
 }
