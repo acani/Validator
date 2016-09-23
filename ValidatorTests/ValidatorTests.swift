@@ -18,6 +18,10 @@ class ValidatorTests: XCTestCase {
         XCTAssertEqual(invalidEmailMessage, "Email must contain an at sign (@) and be between 3 & 254 characters.")
     }
 
+    func testInvalidCodeMessage() {
+        XCTAssertEqual(invalidCodeMessage, "Code must be 4 digits.")
+    }
+
     func testStrip() {
         XCTAssertEqual("".strip(), "")                      // empty
         XCTAssertEqual("—Cool-".strip(), "—Cool-")          // dashes

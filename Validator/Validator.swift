@@ -4,20 +4,20 @@ private let invalidNameMessage      = " name must be between 1 & 50 characters."
 public  let invalidFirstNameMessage = "First" + invalidNameMessage
 public  let invalidLastNameMessage  = "Last" + invalidNameMessage
 public  let invalidUsernameMessage  = "Username must be alphanumeric and between 5 & 15 characters."
-public  let invalidCodeMessage      = "Code must be 4 digits."
 public  let invalidEmailMessage     = "Email must contain an at sign (@) and be between 3 & 254 characters."
+public  let invalidCodeMessage      = "Code must be 4 digits."
 
 extension String {
     public func strip() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
     public var isAlphanumeric: Bool {
-        return !isEmpty && rangeOfString("[^a-zA-Z0-9]", options: .RegularExpressionSearch) == nil
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
 
     public var isNumeric: Bool {
-        return !isEmpty && rangeOfString("[^0-9]", options: .RegularExpressionSearch) == nil
+        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
     }
 
     public var isValidName: Bool {

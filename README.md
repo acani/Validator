@@ -10,6 +10,8 @@ Usage:
 let string = " \n\t abc123  ".strip()  // => "abc123"
 string.isAlphanumeric                  // => true
 "j_s".isAlphanumeric                   // => false
+"0123".isNumeric                       // => true
+"1E3".isNumeric                        // => false
 ```
 
 ```swift
@@ -17,6 +19,7 @@ let firstName = "John"
 let lastName = "Smith"
 let username = "johnsmith"
 let email = "john.smith@example.com"
+let code = "1234"
 
 if !firstName.isValidName {
     print(Validator.invalidFirstNameMessage)
@@ -32,6 +35,10 @@ if !username.isValidUsername {
 
 if !email.isValidEmail {
     print(Validator.invalidEmailMessage)
+}
+
+if !code.isValidCode {
+    print(Validator.invalidCodeMessage)
 }
 ```
 
