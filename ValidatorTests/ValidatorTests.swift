@@ -11,7 +11,7 @@ class ValidatorTests: XCTestCase {
     }
 
     func testInvalidUsernameMessage() {
-        XCTAssertEqual(invalidUsernameMessage, "Username must be alphanumeric and between 5 & 15 characters.")
+        XCTAssertEqual(invalidUsernameMessage, "Username must be alphanumeric and between 1 & 64 characters.")
     }
 
     func testInvalidEmailMessage() {
@@ -60,16 +60,19 @@ class ValidatorTests: XCTestCase {
     }
 
     func testIsValidUsername() {
-        let longUsername = "0123456789abcde"
-        XCTAssertEqual(longUsername.characters.count, 15)
+        let longUsername = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12"
+        XCTAssertEqual(longUsername.characters.count, 64)
 
-        XCTAssertFalse("".isValidUsername)                  // empty
-        XCTAssertFalse("john".isValidUsername)              // too short
-        XCTAssertFalse((longUsername+"f").isValidUsername)  // too long
+        XCTAssertFalse("".isValidUsername)                  // too short
+        XCTAssertFalse((longUsername+"3").isValidUsername)  // too long
         XCTAssertFalse("John Smith".isValidUsername)        // not alphanumeric
-        XCTAssertTrue("JohnS".isValidUsername)              // shortest
+        XCTAssertFalse("John.Smith".isValidUsername)
+        XCTAssertTrue("a".isValidUsername)                  // shortest
+        XCTAssertTrue("1".isValidUsername)
         XCTAssertTrue(longUsername.isValidUsername)         // longest
-        XCTAssertTrue("johnsmith".isValidUsername)          // normal
+        XCTAssertTrue("abc123".isValidUsername)             // letters & numbers
+        XCTAssertTrue("johnsmith".isValidUsername)          // only letters
+        XCTAssertTrue("1234567890".isValidUsername)         // only numbers
     }
 
     func testIsValidEmail() {
