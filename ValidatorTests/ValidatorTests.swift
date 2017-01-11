@@ -3,11 +3,11 @@ import Validator
 
 class ValidatorTests: XCTestCase {
     func testInvalidFirstNameMessage() {
-        XCTAssertEqual(invalidFirstNameMessage, "First name must be between 1 & 50 characters.")
+        XCTAssertEqual(invalidFirstNameMessage, "First name must be between 1 & 3,072 characters.")
     }
 
     func testInvalidLastNameMessage() {
-        XCTAssertEqual(invalidLastNameMessage, "Last name must be between 1 & 50 characters.")
+        XCTAssertEqual(invalidLastNameMessage, "Last name must be between 1 & 3,072 characters.")
     }
 
     func testInvalidUsernameMessage() {
@@ -49,12 +49,14 @@ class ValidatorTests: XCTestCase {
     }
 
     func testIsValidName() {
-        let longName = "abcdefghijklmnopqrstuvwxyz 0123456789`~!@#$%^&*)_—"
-        XCTAssertEqual(longName.characters.count, 50)
+        var longName = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ.0123456789`~!@#$%^&*()_—+={}[]\\|\"'?/<>,;:—"
+        longName = String(repeating: longName, count: 32)
+        XCTAssertEqual(longName.characters.count, 3072)
 
         XCTAssertFalse("".isValidName)                      // empty / too short
         XCTAssertFalse((longName+"1").isValidName)          // too long
-        XCTAssertTrue("j".isValidName)                      // shortest
+        XCTAssertTrue("a".isValidName)                      // shortest
+        XCTAssertTrue("1".isValidName)
         XCTAssertTrue(longName.isValidName)                 // longest
         XCTAssertTrue("John".isValidName)                   // normal
     }

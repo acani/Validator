@@ -1,6 +1,6 @@
 import Foundation.NSCharacterSet
 
-private let invalidNameMessage      = " name must be between 1 & 50 characters."
+private let invalidNameMessage      = " name must be between 1 & 3,072 characters."
 public  let invalidFirstNameMessage = "First" + invalidNameMessage
 public  let invalidLastNameMessage  = "Last" + invalidNameMessage
 public  let invalidUsernameMessage  = "Username must be alphanumeric and between 1 & 64 characters."
@@ -21,7 +21,7 @@ extension String {
     }
 
     public var isValidName: Bool {
-        return 1...50 ~= characters.count
+        return 1...3072 ~= characters.count
     }
 
     public var isValidUsername: Bool {
