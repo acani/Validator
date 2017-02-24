@@ -1,11 +1,12 @@
 import Foundation.NSCharacterSet
 
-private let invalidNameMessage      = " name must be between 1 & 3,072 characters."
-public  let invalidFirstNameMessage = "First" + invalidNameMessage
-public  let invalidLastNameMessage  = "Last" + invalidNameMessage
-public  let invalidUsernameMessage  = "Username must be alphanumeric and between 1 & 64 characters."
-public  let invalidEmailMessage     = "Email must contain an at sign (@) and be between 3 & 254 characters."
-public  let invalidCodeMessage      = "Code must be 4 digits."
+public let firstNameRequiredMessage = "First name is required."
+public let firstNameTooLongMessage = "First name is too long."
+public let lastNameRequiredMessage = "Last name is required."
+public let lastNameTooLongMessage = "Last name is too long."
+public let invalidUsernameMessage = "Username must be alphanumeric and between 1 & 64 characters."
+public let invalidEmailMessage = "Email must contain an at sign (@) and be between 3 & 254 characters."
+public let invalidCodeMessage = "Code must be 4 digits."
 
 extension String {
     public func strip() -> String {
