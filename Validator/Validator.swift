@@ -34,6 +34,6 @@ extension String {
     }
 
     public var isValidCode: Bool {
-        return characters.count == 4 && isNumeric
+        return characters.count == 6 && isNumeric
     }
 }
