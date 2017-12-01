@@ -22,18 +22,18 @@ extension String {
     }
 
     public var isValidName: Bool {
-        return 1...3072 ~= characters.count
+        return 1...3072 ~= count
     }
 
     public var isValidUsername: Bool {
-        return 1...64 ~= characters.count && isAlphanumeric
+        return 1...64 ~= count && isAlphanumeric
     }
 
     public var isValidEmail: Bool {
-        return 3...254 ~= characters.count && characters.contains("@")
+        return 3...254 ~= count && contains("@")
     }
 
     public var isValidCode: Bool {
-        return characters.count == 6 && isNumeric
+        return count == 6 && isNumeric
     }
 }

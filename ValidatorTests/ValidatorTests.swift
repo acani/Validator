@@ -51,7 +51,7 @@ class ValidatorTests: XCTestCase {
     func testIsValidName() {
         var longName = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ.0123456789`~!@#$%^&*()_—+={}[]\\|\"'?/<>,;:—"
         longName = String(repeating: longName, count: 32)
-        XCTAssertEqual(longName.characters.count, 3072)
+        XCTAssertEqual(longName.count, 3072)
 
         XCTAssertFalse("".isValidName)                      // empty / too short
         XCTAssertFalse((longName+"1").isValidName)          // too long
@@ -63,7 +63,7 @@ class ValidatorTests: XCTestCase {
 
     func testIsValidUsername() {
         let longUsername = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12"
-        XCTAssertEqual(longUsername.characters.count, 64)
+        XCTAssertEqual(longUsername.count, 64)
 
         XCTAssertFalse("".isValidUsername)                  // too short
         XCTAssertFalse((longUsername+"3").isValidUsername)  // too long
@@ -79,7 +79,7 @@ class ValidatorTests: XCTestCase {
 
     func testIsValidEmail() {
         var longEmail  = "max@"; for _ in 1...250 { longEmail += "x" }
-        XCTAssertEqual(longEmail.characters.count, 254)
+        XCTAssertEqual(longEmail.count, 254)
 
         XCTAssertFalse("".isValidEmail)                     // empty
         XCTAssertFalse("a@".isValidEmail)                   // too short
