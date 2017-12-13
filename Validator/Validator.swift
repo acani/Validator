@@ -6,7 +6,7 @@ public let lastNameRequiredMessage = "Last name is required."
 public let lastNameTooLongMessage = "Last name is too long."
 public let invalidUsernameMessage = "Username must be alphanumeric and between 1 & 64 characters."
 public let invalidEmailMessage = "Email must contain an at sign (@) and be between 3 & 254 characters."
-public let invalidCodeMessage = "Code must be 4 digits."
+public let invalidCodeMessage = "Code must be 6 digits."
 
 extension String {
     public func strip() -> String {

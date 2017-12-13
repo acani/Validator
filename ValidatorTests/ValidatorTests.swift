@@ -19,7 +19,7 @@ class ValidatorTests: XCTestCase {
     }
 
     func testInvalidCodeMessage() {
-        XCTAssertEqual(invalidCodeMessage, "Code must be 4 digits.")
+        XCTAssertEqual(invalidCodeMessage, "Code must be 6 digits.")
     }
 
     func testStrip() {
