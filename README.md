@@ -22,23 +22,23 @@ let email = "john.smith@example.com"
 let code = "1234"
 
 if !firstName.isValidName {
-    print(Validator.invalidFirstNameMessage)
+  print(Validator.invalidFirstNameMessage)
 }
 
 if !lastName.isValidName {
-    print(Validator.invalidLastNameMessage)
+  print(Validator.invalidLastNameMessage)
 }
 
 if !username.isValidUsername {
-    print(Validator.invalidUsernameMessage)
+  print(Validator.invalidUsernameMessage)
 }
 
 if !email.isValidEmail {
-    print(Validator.invalidEmailMessage)
+  print(Validator.invalidEmailMessage)
 }
 
 if !code.isValidCode {
-    print(Validator.invalidCodeMessage)
+  print(Validator.invalidCodeMessage)
 }
 ```
 

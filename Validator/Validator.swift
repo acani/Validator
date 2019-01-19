@@ -9,31 +9,31 @@ public let invalidEmailMessage = "Email must contain an at sign (@) and be betwe
 public let invalidCodeMessage = "Code must be 6 digits."
 
 extension String {
-    public func strip() -> String {
-        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-    }
+  public func strip() -> String {
+    return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+  }
 
-    public var isAlphanumeric: Bool {
-        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
-    }
+  public var isAlphanumeric: Bool {
+    return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
+  }
 
-    public var isNumeric: Bool {
-        return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
-    }
+  public var isNumeric: Bool {
+    return !isEmpty && range(of: "[^0-9]", options: .regularExpression) == nil
+  }
 
-    public var isValidName: Bool {
-        return 1...3072 ~= count
-    }
+  public var isValidName: Bool {
+    return 1...3072 ~= count
+  }
 
-    public var isValidUsername: Bool {
-        return 1...64 ~= count && isAlphanumeric
-    }
+  public var isValidUsername: Bool {
+    return 1...64 ~= count && isAlphanumeric
+  }
 
-    public var isValidEmail: Bool {
-        return 3...254 ~= count && contains("@")
-    }
+  public var isValidEmail: Bool {
+    return 3...254 ~= count && contains("@")
+  }
 
-    public var isValidCode: Bool {
-        return count == 6 && isNumeric
-    }
+  public var isValidCode: Bool {
+    return count == 6 && isNumeric
+  }
 }
