@@ -159,7 +159,7 @@
 			};
 			buildConfigurationList = D2ABEC751C99C53F00EB88EB /* Build configuration list for PBXProject "Validator" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
